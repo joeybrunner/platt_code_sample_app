@@ -69,6 +69,9 @@ namespace PlattSampleApp.Models
 
             // Calculate average diameter
             AverageDiameter = summedDiameter / totalValidPlanets;
+
+            // Sort by diameter desc
+            Planets = Planets.OrderByDescending(p => p.Diameter).ToList();
         }
 
         public List<PlanetDetailsViewModel> Planets { get; set; }
