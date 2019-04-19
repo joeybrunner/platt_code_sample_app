@@ -23,9 +23,7 @@ namespace PlattSampleApp.Controllers
 
         public ActionResult GetPlanetTwentyTwo(int planetid)
         {
-            var model = new SinglePlanetViewModel();
-
-            // TODO: Implement this controller action
+            var model = new SinglePlanetViewModel(planetid.ToString());
 
             return View(model);
         }

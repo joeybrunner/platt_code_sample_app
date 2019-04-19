@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using PlattSampleApp.Classes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,24 @@ namespace PlattSampleApp.Models
 {
     public class SinglePlanetViewModel
     {
+        public SinglePlanetViewModel(string planetId)
+        {
+            SwApiAccess swApiAccess = new SwApiAccess();
+            string apiEndpoint = "https://swapi.co/api/planets/" + planetId;
+
+            string json = swApiAccess.apiGetRequest(apiEndpoint);
+            JsonPlanet planet = JsonConvert.DeserializeObject<JsonPlanet>(json);
+
+            this.Name = planet.Name;
+            this.LengthOfDay = planet.RotationPeriod;
+            this.LengthOfYear = planet.OrbitalPeriod;
+            this.Diameter = planet.Diameter;
+            this.Climate = planet.Climate;
+            this.Gravity = planet.Gravity;
+            this.SurfaceWaterPercentage = planet.SurfaceWater;
+            this.Population = planet.Population;
+        }
+
         public string Name { get; set; }
 
         public string LengthOfDay { get; set; }
