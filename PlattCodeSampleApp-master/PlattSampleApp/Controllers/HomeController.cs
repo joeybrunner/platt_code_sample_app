@@ -18,8 +18,6 @@ namespace PlattSampleApp.Controllers
         {
             var model = new AllPlanetsViewModel();
 
-            // TODO: Implement this controller action
-
             return View(model);
         }
 
