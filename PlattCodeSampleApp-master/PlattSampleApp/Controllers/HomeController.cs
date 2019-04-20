@@ -30,9 +30,7 @@ namespace PlattSampleApp.Controllers
 
         public ActionResult GetResidentsOfPlanetNaboo(string planetname)
         {
-            var model = new PlanetResidentsViewModel();
-
-            // TODO: Implement this controller action
+            var model = new PlanetResidentsViewModel(planetname);
 
             return View(model);
         }

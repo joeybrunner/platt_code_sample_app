@@ -14,7 +14,7 @@ namespace PlattSampleApp.Models
             SwApiAccess swApiAccess = new SwApiAccess();
             string apiEndpoint = "https://swapi.co/api/planets/" + planetId;
 
-            string json = swApiAccess.apiGetRequest(apiEndpoint);
+            string json = swApiAccess.ApiGetRequest(apiEndpoint);
             JsonPlanet planet = JsonConvert.DeserializeObject<JsonPlanet>(json);
 
             this.Name = planet.Name;

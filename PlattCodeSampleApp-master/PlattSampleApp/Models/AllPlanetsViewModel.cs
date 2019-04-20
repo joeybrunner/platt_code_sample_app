@@ -24,7 +24,7 @@ namespace PlattSampleApp.Models
             // Continue looping api calls
             while (continueLoop)
             {
-                string json = swApiAccess.apiGetRequest(nextApiEndpoint);
+                string json = swApiAccess.ApiGetRequest(nextApiEndpoint);
                 JsonAllPlanets allPlanets = JsonConvert.DeserializeObject<JsonAllPlanets>(json);
 
                 foreach (JsonPlanet jsonPlanet in allPlanets.Results)
@@ -35,7 +35,8 @@ namespace PlattSampleApp.Models
                         Name = jsonPlanet.Name,
                         Population = jsonPlanet.Population,
                         Terrain = jsonPlanet.Terrain,
-                        LengthOfYear = jsonPlanet.OrbitalPeriod
+                        LengthOfYear = jsonPlanet.OrbitalPeriod,
+                        Url = jsonPlanet.Url
                     };
 
                     // Display 0 if the diameter is unknown but don't include this planet in average

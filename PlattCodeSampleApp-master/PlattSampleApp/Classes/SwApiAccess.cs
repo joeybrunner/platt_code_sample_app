@@ -10,7 +10,7 @@ namespace PlattSampleApp.Classes
 {
     public class SwApiAccess
     {
-        public string apiGetRequest(string apiEndpoint)
+        public string ApiGetRequest(string apiEndpoint)
         {
             WebRequest request = WebRequest.Create(apiEndpoint);
             WebResponse response = request.GetResponse();
