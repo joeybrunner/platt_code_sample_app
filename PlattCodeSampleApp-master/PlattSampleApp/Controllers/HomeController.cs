@@ -39,8 +39,6 @@ namespace PlattSampleApp.Controllers
         {
             var model = new VehicleSummaryViewModel();
 
-            // TODO: Implement this controller action
-
             return View(model);
         }
     }
