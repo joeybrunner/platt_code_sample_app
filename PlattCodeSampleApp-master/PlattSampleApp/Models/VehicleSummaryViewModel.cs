@@ -95,14 +95,8 @@ namespace PlattSampleApp.Models
         public List<VehicleStatsViewModel> Details { get; set; }
     }
 
-    public class JsonAllVehicles
+    public class JsonAllVehicles : JsonAllBase
     {
-        public string Count { get; set; }
-
-        public string Next { get; set; }
-
-        public string Previous { get; set; }
-
         public List<JsonVehicle> Results { get; set; }
     }
 

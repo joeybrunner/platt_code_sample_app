@@ -80,14 +80,38 @@ namespace PlattSampleApp.Models
         public double AverageDiameter { get; set; }
     }
 
-    public class JsonAllPlanets
+    public class JsonAllPlanets : JsonAllBase
     {
-        public string Count { get; set; }
-
-        public string Next { get; set; }
-
-        public string Previous { get; set; }
-
         public List<JsonPlanet> Results { get; set; }
+    }
+
+    public class JsonPlanet
+    {
+        public string Name { get; set; }
+
+        [JsonProperty(PropertyName = "rotation_period")]
+        public string RotationPeriod { get; set; }
+
+        [JsonProperty(PropertyName = "orbital_period")]
+        public string OrbitalPeriod { get; set; }
+
+        public string Diameter { get; set; }
+
+        public string Climate { get; set; }
+
+        public string Gravity { get; set; }
+
+        public string Terrain { get; set; }
+
+        [JsonProperty(PropertyName = "surface_water")]
+        public string SurfaceWater { get; set; }
+
+        public string Population { get; set; }
+
+        public List<string> Residents { get; set; }
+
+        public List<string> Films { get; set; }
+
+        public string Url { get; set; }
     }
 }

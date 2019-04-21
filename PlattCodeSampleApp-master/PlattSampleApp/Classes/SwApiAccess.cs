@@ -28,4 +28,13 @@ namespace PlattSampleApp.Classes
             return responseFromServer;
         }
     }
+
+    public class JsonAllBase
+    {
+        public string Count { get; set; }
+
+        public string Next { get; set; }
+
+        public string Previous { get; set; }
+    }
 }

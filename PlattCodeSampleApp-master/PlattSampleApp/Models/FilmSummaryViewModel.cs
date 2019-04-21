@@ -154,14 +154,8 @@ namespace PlattSampleApp.Models
         public string MostAverageFilm { get; set; }
     }
 
-    public class JsonAllFilms
+    public class JsonAllFilms : JsonAllBase
     {
-        public string Count { get; set; }
-
-        public string Next { get; set; }
-
-        public string Previous { get; set; }
-
         public List<JsonFilm> Results { get; set; }
     }
 
