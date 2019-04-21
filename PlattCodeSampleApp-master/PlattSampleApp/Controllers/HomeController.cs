@@ -41,5 +41,12 @@ namespace PlattSampleApp.Controllers
 
             return View(model);
         }
+
+        public ActionResult MostAverageFilmCalculator(string sortBy)
+        {
+            var model = new MostAverageFilmViewModel(sortBy);
+
+            return View(model);
+        }
     }
 }

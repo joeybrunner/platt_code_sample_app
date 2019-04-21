@@ -1,0 +1,91 @@
+﻿@model PlattSampleApp.Models.MostAverageFilmViewModel
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Most Average Film</title>
+</head>
+<body>
+    <div>
+        <h3>Film Data Summary</h3>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <td>Film Title</td>
+                    <td>
+                        <div class="col-md-12">
+                            <div class="btn btn-default">
+                                @Html.ActionLink("Sort Characters", "MostAverageFilmCalculator", "Home", new { sortBy = "Characters" }, null)
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-12">
+                            <div class="btn btn-default">
+                                @Html.ActionLink("Sort Planets", "MostAverageFilmCalculator", "Home", new { sortBy = "Planets" }, null)
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-12">
+                            <div class="btn btn-default">
+                                @Html.ActionLink("Sort Starships", "MostAverageFilmCalculator", "Home", new { sortBy = "Starships" }, null)
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-12">
+                            <div class="btn btn-default">
+                                @Html.ActionLink("Sort Vehicles", "MostAverageFilmCalculator", "Home", new { sortBy = "Vehicles" }, null)
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-12">
+                            <div class="btn btn-default">
+                                @Html.ActionLink("Sort Species", "MostAverageFilmCalculator", "Home", new { sortBy = "Species" }, null)
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var f in Model.Films)
+                {
+                    <tr>
+                        <td>@f.Title</td>
+                        <td>@f.Characters</td>
+                        <td>@f.Planets</td>
+                        <td>@f.Starships</td>
+                        <td>@f.Vehicles</td>
+                        <td>@f.Species</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <h3>Most Average Film Calculator Results</h3>
+        <div>
+            <span>The most average film can be calculated by averaging the number of each of the properties in the summary, and then by finding the film that has the closest value to the average in the most properties!</span>
+        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <td>Property</td>
+                    <td>Average</td>
+                    <td>Closest Film</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var fp in Model.FilmProperties)
+                {
+                    <tr>
+                        <td>@fp.PropertyName</td>
+                        <td>@fp.CalculatedAverage</td>
+                        <td>@fp.FilmClosestToAverage</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <h3>@Model.MostAverageFilm is the most average Star Wars Film!</h3>
+    </div>
+</body>
+</html>

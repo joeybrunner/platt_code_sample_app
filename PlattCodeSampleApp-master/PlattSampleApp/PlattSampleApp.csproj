@@ -200,6 +200,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AllPlanetsViewModel.cs" />
+    <Compile Include="Models\FilmDetailsViewModel.cs" />
+    <Compile Include="Models\FilmPropertyViewModel.cs" />
+    <Compile Include="Models\FilmSummaryViewModel.cs" />
     <Compile Include="Models\PlanetDetailsViewModel.cs" />
     <Compile Include="Models\PlanetResidentsViewModel.cs" />
     <Compile Include="Models\ResidentSummary.cs" />
@@ -250,6 +253,7 @@
     <Content Include="Views\Home\GetPlanetTwentyTwo.cshtml" />
     <Content Include="Views\Home\GetResidentsOfPlanetNaboo.cshtml" />
     <Content Include="Views\Home\VehicleSummary.cshtml" />
+    <Content Include="Views\Home\MostAverageFilmCalculator.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
