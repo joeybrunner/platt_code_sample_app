@@ -1,1 +1,2 @@
 # platt_code_sample_app
+An additional page was implemented that attempts to find the most average Star Wars film based on film data. The calculation for this is based on nothing except my own wish to see how certain data structures are handled in C# compared to Perl which I currently use for web development.
