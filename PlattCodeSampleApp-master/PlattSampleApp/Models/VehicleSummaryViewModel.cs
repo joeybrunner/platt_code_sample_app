@@ -12,7 +12,6 @@ namespace PlattSampleApp.Models
         public VehicleSummaryViewModel()
         {
             Details = new List<VehicleStatsViewModel>();
-            SwApiAccess swApiAccess = new SwApiAccess();
 
             bool continueLoop = true;
             string nextApiEndpoint = "https://swapi.co/api/vehicles";
@@ -22,7 +21,7 @@ namespace PlattSampleApp.Models
             // Continue looping api calls
             while (continueLoop)
             {
-                string json = swApiAccess.ApiGetRequest(nextApiEndpoint);
+                string json = SwApiAccess.ApiGetRequest(nextApiEndpoint);
                 JsonAllVehicles allVehicles = JsonConvert.DeserializeObject<JsonAllVehicles>(json);
 
                 foreach (JsonVehicle jsonVehicle in allVehicles.Results)

@@ -8,9 +8,9 @@ using System.Web;
 
 namespace PlattSampleApp.Classes
 {
-    public class SwApiAccess
+    public static class SwApiAccess
     {
-        public string ApiGetRequest(string apiEndpoint)
+        public static string ApiGetRequest(string apiEndpoint)
         {
             WebRequest request = WebRequest.Create(apiEndpoint);
             WebResponse response = request.GetResponse();

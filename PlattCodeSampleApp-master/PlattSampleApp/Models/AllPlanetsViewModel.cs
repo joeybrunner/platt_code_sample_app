@@ -13,7 +13,6 @@ namespace PlattSampleApp.Models
         public AllPlanetsViewModel()
         {
             Planets = new List<PlanetDetailsViewModel>();
-            SwApiAccess swApiAccess = new SwApiAccess();
 
             bool continueLoop = true;
             // Setup endpoint for first api call
@@ -24,7 +23,7 @@ namespace PlattSampleApp.Models
             // Continue looping api calls
             while (continueLoop)
             {
-                string json = swApiAccess.ApiGetRequest(nextApiEndpoint);
+                string json = SwApiAccess.ApiGetRequest(nextApiEndpoint);
                 JsonAllPlanets allPlanets = JsonConvert.DeserializeObject<JsonAllPlanets>(json);
 
                 foreach (JsonPlanet jsonPlanet in allPlanets.Results)

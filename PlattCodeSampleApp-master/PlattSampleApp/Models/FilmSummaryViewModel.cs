@@ -15,10 +15,9 @@ namespace PlattSampleApp.Models
             Films = new List<FilmDetailsViewModel>();
             FilmProperties = new List<FilmPropertyViewModel>();
 
-            SwApiAccess swApiAccess = new SwApiAccess();
             string apiEndpoint = "https://swapi.co/api/films";
 
-            string json = swApiAccess.ApiGetRequest(apiEndpoint);
+            string json = SwApiAccess.ApiGetRequest(apiEndpoint);
             JsonAllFilms allFilms = JsonConvert.DeserializeObject<JsonAllFilms>(json);
 
             int filmCount = 0;

@@ -14,14 +14,12 @@ namespace PlattSampleApp.Models
             string planetUrl = GetPlanetUrlByName(planetName);
             Residents = new List<ResidentSummary>();
 
-            SwApiAccess swApiAccess = new SwApiAccess();
-
-            string json = swApiAccess.ApiGetRequest(planetUrl);
+            string json = SwApiAccess.ApiGetRequest(planetUrl);
             JsonPlanet planet = JsonConvert.DeserializeObject<JsonPlanet>(json);
 
             foreach (string residentUrl in planet.Residents)
             {
-                json = swApiAccess.ApiGetRequest(residentUrl);
+                json = SwApiAccess.ApiGetRequest(residentUrl);
                 JsonResident resident = JsonConvert.DeserializeObject<JsonResident>(json);
 
                 ResidentSummary residentSummary = new ResidentSummary
